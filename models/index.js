@@ -7,5 +7,5 @@ export default {
     Categoria,
     Articulo,
     Usuario,
-    Persona,
+    Persona
 }

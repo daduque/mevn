@@ -7,7 +7,7 @@ const personaSchema = new Schema({
     num_documento: { type: String, maxlength:20 },
     direccion: { type: String, maxlength: 80 },
     telefono: { type: String, maxlength: 20 },
-    email: { type: String, maxlength: 60 },
+    email: { type: String, maxlength: 60, unique: true },
     estado: {type: Number, default: 1},
     createdAt:{type: Date, default: Date.now}
 });
