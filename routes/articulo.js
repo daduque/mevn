@@ -7,6 +7,7 @@ const router = routerx();
 router.post('/add', auth.verifyAlmacenero, articuloController.add);
 
 router.get('/query', auth.verifyAlmacenero, articuloController.query);
+router.get('/queryCode', auth.verifyUser, articuloController.queryCode);
 router.get('/list', auth.verifyAlmacenero, articuloController.list);
 
 router.put('/update', auth.verifyAlmacenero, articuloController.update);

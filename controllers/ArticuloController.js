@@ -31,6 +31,24 @@ export default {
             next(e);
         }
     },
+    queryCode: async (req, res, next) => {
+        try {
+            const reg = await models.Articulo.findOne({codigo: req.query.codigo})
+            .populate('categoria',{nombre:1});
+            if(!reg){
+                res.status(404).send({
+                    message: 'El registro no existe'
+                })
+            }else{
+                res.status(200).json(reg);
+            }
+        } catch(e){
+            res.status(500).send({
+                message: 'Error!!'
+            });
+            next(e);
+        }
+    },
     list: async (req, res, next) => {
         try {
             let valor = req.query.valor;
